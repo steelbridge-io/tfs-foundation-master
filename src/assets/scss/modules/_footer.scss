@@ -1,0 +1,32 @@
+.footer-container {
+  @include xy-grid;
+  margin-top: rem-calc(0);
+  background-color: $dark-gray;
+}
+
+.footer-grid {
+  @include xy-grid;
+  padding: rem-calc(30) 0;
+  
+  h6 {
+    font-size: rem-calc(22);
+    color: $font-white;
+  }
+  
+  p {
+    color: $font-white;
+  }
+
+  section {
+    @include xy-cell();
+    @include breakpoint(large) {
+      @include xy-cell(auto);
+    }
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+}

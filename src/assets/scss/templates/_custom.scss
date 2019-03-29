@@ -1,0 +1,728 @@
+/** Custom CSS
+
+  - Global
+  - Card
+  - CTA
+  - Flex Add-ons
+  - Footer
+  - Foundation Image Plugin
+  - Front Page Nav
+  - Gutenberg
+  - Header Image
+  - Loader
+  - Navigation
+  - Orbit
+  - Padding & Margin
+  - Page
+  - Templates
+      Side Bar Right
+  - Typography
+  - Widgets
+      Front Page Top
+  - WordPress Specific
+  - ZZ Overriding Media Queries
+
+------------------------------------ **/
+
+/** Global
+--------------------------------- **/
+body {
+  background-color: #ffffff;
+  font-family: 'Heebo', sans-serif;
+}
+
+/** Card
+--------------------------------- **/
+.card .card-divider {
+  color: #f5f5f5;
+  padding: 2em;
+}
+.bottom.card {
+  margin-bottom: 0;
+}
+.bottomcard.card {
+  margin-bottom: 0;
+}
+#item-row-fp {
+  .grid-x .the-cell img {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+/** CTA
+---------------------------------- **/
+#after-default-template-content {
+  padding: 1.618em;
+
+  .card {
+    border: none;
+    background-color: transparent;
+    color: $font-white;
+  }
+}
+
+/** Flex Add-ons
+---------------------------------- **/
+.d-flex {
+  display: flex;
+}
+
+/** Footer
+---------------------------------- **/
+$marketing-site-footer-bg: #2c3840;
+
+.marketing-site-footer {
+  background: $marketing-site-footer-bg;
+  color: lighten($marketing-site-footer-bg, 40%);
+  padding: 2rem 0 0;
+
+  .marketing-site-footer-menu-social a {
+    color: $white;
+  }
+
+  .column-block {
+    margin-bottom: 30px;
+  }
+
+  > .row {
+    margin-bottom: 1rem;
+  }
+
+  @include breakpoint(small only) {
+    .columns {
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+.marketing-site-footer-name {
+  color: $white;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.marketing-site-footer-title {
+  color: $white;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+
+.marketing-site-footer-block {
+  display: flex;
+  margin-bottom: 1rem;
+
+  .fa {
+    font-size: 2rem;
+    color: darken($marketing-site-footer-bg, 20%);
+  }
+
+  p {
+    margin-left: 1rem;
+    line-height: 1.125rem;
+  }
+}
+
+.marketing-site-footer-bottom {
+  background: darken($marketing-site-footer-bg, 20%);
+  padding: 1rem 0;
+
+  p,
+  .menu {
+    margin-bottom: 0;
+  }
+
+  .marketing-site-footer-bottom-links {
+    justify-content: flex-end;
+
+    a {
+      color: lighten($marketing-site-footer-bg, 40%);
+    }
+
+    @include breakpoint(medium down) {
+      justify-content: center;
+    }
+  }
+
+  @include breakpoint(medium down) {
+    text-align: center;
+  }
+}
+
+/** Foundation Image Plugin
+------------------------------------- **/
+.image-title h6 {
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+.image-wrapper {
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  border-radius: 4px;
+}
+.image-overlay-content {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  padding-top: 1em;
+}
+.overlay-fade-in p {
+  letter-spacing: 0.15em;
+  color: #f4f4f4;
+  font-size: 1.5vw;
+  line-height: 1.2;
+  opacity: 0;
+  transition: all 0.2s linear;
+}
+.image-text {
+  width: 100%;
+  background: rgba(0,0,0,0.5);
+  padding: .5em 0;
+  p {
+    font-size: 16px !important;
+    margin: 1em auto;
+    text-align: center;
+  }
+  .more a {
+    color: #F10509;
+    font-weight: 800;
+  }
+}
+.overlay-fade-in img {
+  transition: all 0.2s linear; }
+.overlay-fade-in .image-overlay-content {
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  transition: all 0.4s ease-in-out; }
+.overlay-fade-in h2 {
+  color: #f2f2f2;
+  font-size: 1.8rem;
+  margin-top: 5%;
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+}
+.overlay-fade-in .button {
+  display: inline-block;
+  text-decoration: none;
+  padding: 7px 14px;
+  background: #FFF;
+  color: #222;
+  text-transform: uppercase;
+  box-shadow: 0 0 1px #000;
+  position: relative;
+  border: 1px solid #999;
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+}
+.overlay-fade-in .button:hover {
+  box-shadow: 0 0 5px #000;
+}
+.overlay-fade-in:hover img {
+  transform: scale(1.2);
+}
+.overlay-fade-in:hover .image-overlay-content {
+  opacity: 1;
+}
+.overlay-fade-in:hover h2, .overlay-fade-in p, .overlay-fade-in .button {
+  opacity: 1;
+}
+.overlay-fade-in:hover p {
+  transition-delay: 0.1s;
+}
+.overlay-fade-in:hover .button {
+  transition-delay: 0.2s;
+}
+
+/** Front Page Nav
+------------------------------------- **/
+body.sticky-shrinknav-wrapper .sticky-shrinknav-header .logoimg {
+  width: 100%;
+  opacity: 1 !important;
+}
+body.sticky-shrinknav-wrapper .sticky-shrinknav-header.site-header .sticky-shrinknav-menu {
+  opacity: 1 !important;
+}
+body.sticky-shrinknav-wrapper .sticky-shrinknav-header .logoimg .fplogo.sticky-shrinknav-header-title {
+  transform: scale(.4);
+  transition: all 1.3s ease-out;
+  float: left;
+}
+
+/* Marketing Template */
+.marketing-site-content-section {
+  display: flex;
+  flex-wrap: wrap;
+
+  .button.round {
+    border-radius: 5000px;
+    text-transform: uppercase;
+    margin-bottom: 0;
+  }
+
+  .marketing-site-content-section-img {
+    align-self: center;
+    flex: 1 0 100%;
+
+    img {
+      width: 100%;
+    }
+
+    @media screen and (min-width: 40em) {
+      flex: 1 0 50%;
+    }
+  }
+
+  .marketing-site-content-section-block {
+    padding: 1rem;
+    flex: 1 0 100%;
+    align-self: stretch;
+    background: $light-gray;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    @media screen and (min-width: 40em) {
+      flex: 1 0 50%;
+      padding: 2rem;
+    }
+  }
+}
+
+.marketing-site-content-section-block-header {
+  font-size: 24px;
+}
+
+.marketing-site-content-section-block-subheader {
+  font-size: 13px;
+}
+/* End Marketing Template */
+
+/** Gutenberg
+------------------------------------ **/
+.entry-content .alignfull {
+  margin-left  : calc( -100vw / 2 + 100% / 2 );
+  margin-right : calc( -100vw / 2 + 100% / 2 );
+  max-width    : 100vw;
+}
+.alignfull img {
+  width: 100vw;
+}
+.entry-content {
+  overflow: visible !important;
+}
+
+/** Header Image
+------------------------------------ **/
+#page-img {
+  margin-bottom: 1.618em;
+}
+/** Loader
+------------------------------------ **/
+.loader {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: rgba(44, 56, 64, 1);
+}
+
+/** Navigation
+----------------------------------- **/
+
+.sticky-container {
+  z-index: 3000;
+}
+
+@-webkit-keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.mobile-menu.vertical.menu {
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+/** Orbit
+----------------------------------- **/
+.orbit-caption {
+  text-align: center;
+  font-size: 25px;
+  font-family: 'Josefin Sans', sans-serif;
+}
+.orbit-previous {
+  border-radius: 0 9px 9px 0;
+  opacity: 0.5;
+}
+.orbit-next {
+  border-radius: 9px 0 0 9px;
+  opacity: 0.5;
+}
+// YouTube
+.videobg {
+  position: relative;
+  width: 100%; /* Set video container element width here */
+  height: 100%; /* Set video container element height here */
+  overflow: hidden;
+  background: #111; /* bg color, if video is not high enough */
+}
+
+/* horizontally center the video */
+.videobg-width {
+  position: absolute;
+  width: 100%; /* Change width value to cover more area*/
+  height: 100%;
+  left: -9999px;
+  right: -9999px;
+  margin: auto;
+}
+
+/* set video aspect ratio and vertically center */
+.videobg-aspect {
+  position: absolute;
+  width: 100%;
+  height: 0;
+  top: -9999px;
+  bottom: -9999px;
+  margin: auto;
+  padding-bottom: 56.25%; /* 16:9 ratio */
+  overflow: hidden;
+
+}
+.fp-movie-comment h1,
+.fp-movie-comment h2,
+.fp-movie-comment h3 {
+  font-family: 'Josefin Sans', sans-serif;
+}
+.videobg-make-height {
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+}
+
+.videobg-hide-controls {
+  box-sizing: content-box;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  /* Vimeo timeline and play button are ~55px high */
+  padding: 55px 97.7777px; /* 16:9 ratio */
+  top: -55px;
+  left: -97.7777px; /* 16:9 ratio */
+}
+
+.videobg iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border: 0 none;
+}
+
+// MP4
+.promo {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+
+  #video_bg {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    z-index: 0;
+  }
+
+  .row {
+    min-height: 100%;
+  }
+
+  #message {
+    color: #fff;
+    text-transform: uppercase;
+    z-index: 1;
+    height: 100%;
+  }
+}
+
+div.sidebar.orbit-container
+{
+  height: 100%; /* Your own height */
+  width: 100%; /* Your own width */
+}
+.portfolio-orbit.orbit,
+.portfolio-orbit .orbit-wrapper {
+  height: 100% !important;
+}
+.orbit-bullets-container {
+  margin-top: -100px;
+  margin-bottom: 74px;
+}
+.orbit-bullets button {
+  width: .5rem;
+  height: .5rem;
+}
+ul.orbit-ul, li.orbit-item
+{
+  height: 100% !important; /* Your own height */
+}
+
+/** Padding & Margin
+------------------------------------ **/
+.plpr1em {
+  padding-left: 1em;
+  padding-right: 1em;
+}
+.mt-1618 {
+  margin-top: 1.618em;
+}
+.mt-2618 {
+  margin-top: 2.618em;
+}
+.mt-5618 {
+  margin-top: 5.618em;
+}
+.mb-2618 {
+  margin-bottom: 2.618em;
+}
+.padding-lr {
+  padding-left: 1.618em;
+  padding-right: 1.618em;
+}
+
+/** Page
+------------------------------------ **/
+#content-page.entry-content {
+  margin-bottom: 1.618em;
+}
+.entry-content {
+  overflow: hidden;
+}
+.featured-hero.row {
+  max-width: 100%;
+  align-content: center;
+  align-items: center;
+}
+.featured-hero {
+  h1, h2, h3 {
+    text-align: center;
+    color: #ffffff;
+    z-index: 201;
+  }
+}
+.page-image {
+  z-index: 203;
+  img {
+    display: block;
+    margin: 0 auto;
+    max-width: 19vw;
+  }
+}
+
+.page-image-text {
+  z-index: 201;
+}
+
+#page-hero {
+  position: relative;
+  z-index: -100;
+  :before {
+    content: '\A';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(rgba(43, 43, 43, 0.156),
+      rgba(43, 43, 43, 0.156));
+    z-index: -100;
+  }
+}
+body {
+  position: relative;
+  z-index: 1;
+}
+/** Templates
+------------------------------------ **/
+/* Side Bar Right */
+
+#sidebar-right-template.main-container {
+  padding-left: 0;
+  padding-right: 0;
+  max-width: 100%;
+
+  .maincont {
+    padding-top: 2.618em;
+    padding-left: 2.618em;
+    padding-right: 2.618em;
+  }
+
+  .side-bar-right.row {
+    max-width: 100%;
+  }
+}
+
+#sidebar-right-sidebar {
+  padding-top: 1.618em;
+}
+
+  /** Typography
+  ------------------------------------ **/
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  font-family: "Josefin Sans", san-serif;
+}
+
+#parallaxone {
+  .parallax-text {
+    h3 {
+      font-family: 'Noto Sans JP', sans-serif;
+    }
+  }
+}
+
+#parallax-divider {
+  .parallax-text-divider {
+    h3 {
+      font-family: 'Anton', sans-serif;
+      font-size: 2.9375rem;
+    }
+  }
+}
+
+#parallaxtwo {
+  .parallax-text {
+    h3 {
+      font-family: 'Noto Sans JP', sans-serif;
+    }
+  }
+}
+
+.topcard.card,
+.bottomcard.card {
+  border: none;
+}
+
+.card-divider-before {
+  width: 100%;
+  height: auto;
+  display: block;
+  position: relative;
+  background-color: #000;
+}
+
+.topcard .card-divider h4,
+.topcard .card-divider h3 {
+  text-shadow: 2px 2px 1px #000;
+  font-family: 'Anton', sans-serif;
+  font-size: 3rem;
+  z-index: 999;
+}
+
+.topcard .card-divider,
+.bottomcard .card-divider {
+  background-color: transparent;
+}
+
+.bottomcard .card-divider h4,
+.bottomcard .card-divider h3 {
+  text-shadow: 2px 2px 1px #000;
+  font-family: 'Anton', sans-serif;
+  font-size: 3rem;
+  z-index: 999;
+}
+/** Widgets
+------------------------------------ **/
+#top-cta.row {
+  max-width: 100%;
+}
+#top-cta {
+  padding: 2.618em;
+  margin-bottom: 2em;
+}
+
+/** WordPress Specific Yay
+------------------------------------ **/
+.logged-in.admin-bar header#front-php-nav  {
+  margin-top: 31.5px;
+}
+
+/** ZZ Overriding Media Queries
+--------------------------------- **/
+/* Small Only */
+@media screen and (max-width: 39.9375em) {
+  #top-cta .left-top-widget {
+    margin-bottom: 1em;
+    padding-top: 1.618em;
+  }
+  .orbit-bullets {
+    margin-top: -6.2rem;
+  }
+  #page-img.column.medium-6.large-12 {
+    display: flex;
+    align-items: center;
+  }
+  .device-margins {
+    margin-bottom: 1rem;
+  }
+  .overlay-fade-in p {
+    font-size: 4vh;
+    padding: 1rem .5rem .5rem;
+  }
+}
+/* Medium and up */
+@media screen and (min-width: 40em) {
+}
+
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+  #top-cta .left-top-widget {
+    margin-bottom: 1em;
+    padding-top: 1.618em;
+  }
+  .orbit-bullets {
+    margin-top: -6.2rem;
+  }
+  #page-img.column.medium-6.large-12 {
+    display: flex;
+    align-items: center;
+  }
+  #fp-video-container.device-margins {
+    padding-bottom: 1rem;
+  }
+  .overlay-fade-in p {
+    padding: .5rem;
+    font-size: 3vh;
+  }
+}
+
+/* Large and up */
+@media screen and (min-width: 64em) {}
+
+/* Large only */
+@media screen and (min-width: 64em) and (max-width: 74.9375em) {
+
+}
