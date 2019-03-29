@@ -165,7 +165,8 @@
 					</div>
 				<?php elseif( $fp_youtube || $fp_movie_mp4 ) :  ?>
 					<div class="promo">
-						<video autoplay loop muted poster="/assets/img/video-path.jpg" id="video_bg">
+						<!--poster="/assets/img/video-path.jpg"-->
+						<video autoplay loop muted id="video_bg">
 							<source src="<?php echo $fp_movie_webm; ?>" type="video/webm">
 							<source src="<?php echo $fp_movie_mp4; ?>" type="video/mp4">
 						</video>
