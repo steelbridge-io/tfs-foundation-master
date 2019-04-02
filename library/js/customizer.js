@@ -1,46 +1,40 @@
 ( function( $ ) {
 "use strict";
 	// Front Page Slider Image #1
-	wp.customize( 'fp-topslider-one', function(value) {
+/*	wp.customize( 'fp-topslider-one', function(value) {
 		value.bind(function(to){
 			var fpsliderone = $( '.orbit-image.orbit-image-one' );
 			fpsliderone.attr( 'src', to );
 		});
-	});
-  
-   wp.customize( 'fp-topslider-one-caption', function( value ) {
-    value.bind( function( to ) {
-      $( '.orbit-caption.orbit-caption-one' ).text( to );
-    } );
-  } );
+	});*/
 
   // Front Page Slider Image #2
-	wp.customize( 'fp-topslider-two', function(value) {
+	/*wp.customize( 'fp-topslider-two', function(value) {
 		value.bind(function(to){
 			var fpsliderone = $( '.orbit-image.orbit-image-two' );
 			fpsliderone.attr( 'src', to );
 		});
-	});
+	});*/
   
-  wp.customize( 'fp-topslider-two-caption', function( value ) {
+ /* wp.customize( 'fp-topslider-two-caption', function( value ) {
     value.bind( function( to ) {
       $( '.orbit-caption.orbit-caption-two' ).text( to );
     } );
-  } );
+  } ); */
   
   // Front Page Slider Image #3
-	wp.customize( 'fp-topslider-three', function(value) {
+	/*wp.customize( 'fp-topslider-three', function(value) {
 		value.bind(function(to){
 			var fpsliderone = $( '.orbit-image.orbit-image-three' );
 			fpsliderone.attr( 'src', to );
 		});
-	});
+	});*/
   
-   wp.customize( 'fp-topslider-three-caption', function( value ) {
+  /* wp.customize( 'fp-topslider-three-caption', function( value ) {
     value.bind( function( to ) {
       $( '.orbit-caption.orbit-caption-three' ).text( to );
     } );
-  } );
+  } ); */
   
   // Front Page Slider Image #4
 	wp.customize( 'fp-topslider-four', function(value) {
@@ -182,22 +176,10 @@
       $( '#bottomcardid' ).css('background-color', to );
     });
   });
-  
-  wp.customize( 'fp-topparallax-cta', function( value ) {
-    value.bind( function( to ) {
-      $( '#parallaxone .parallax-text' ).text( to );
-    } );
-  } );
 
   wp.customize( 'fp-toppara-color', function( value ) {
     value.bind( function( newval ) {
       $( '#parallaxone .parallax-text' ).css('color', newval );
-    } );
-  } );
-  
-  wp.customize( 'fp-divider-content', function( value ) {
-    value.bind( function( to ) {
-      $( '#parallax-divider .cell' ).text( to );
     } );
   } );
 
@@ -213,12 +195,6 @@
 			fpparallaxtop.attr( 'data-image-src', to );
     });
   });
-  
-  wp.customize( 'fp-bottomparallax-cta', function( value ) {
-    value.bind( function( to ) {
-      $( '#parallaxtwo .parallax-text' ).text( to );
-    } );
-  } );
 
   wp.customize( 'fp-bottomparallax-color', function( value ) {
     value.bind( function( newval ) {

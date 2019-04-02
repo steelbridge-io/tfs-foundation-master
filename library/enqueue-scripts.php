@@ -340,10 +340,6 @@ if ( ! function_exists( 'foundationpress_scripts' ) ) :
 			wp_add_inline_style( $load_sidebar_cta_temp_css, $sidebar_cta_temp_css );
 		}
 
-
-
-
-
 	} 
   endif; 
 	add_action( 'wp_enqueue_scripts', 'foundationpress_scripts' );
