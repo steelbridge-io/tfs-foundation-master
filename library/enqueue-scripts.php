@@ -340,6 +340,21 @@ if ( ! function_exists( 'foundationpress_scripts' ) ) :
 			wp_add_inline_style( $load_sidebar_cta_temp_css, $sidebar_cta_temp_css );
 		}
 
+		$css_cutomizer_style = 'main-stylesheet';
+		$css_customizer = '';
+
+		$fptopbgcolor_color = get_theme_mod('fp-top-widget-bg-color');
+
+
+		$css_customizer .= ' 
+		
+		#top-cta {background-color: ' . $fptopbgcolor_color . ';}
+		
+		';
+
+		if( $css_customizer ) {
+		//	wp_add_inline_style( $css_cutomizer_style, $css_customizer );
+		}
 	} 
   endif; 
 	add_action( 'wp_enqueue_scripts', 'foundationpress_scripts' );

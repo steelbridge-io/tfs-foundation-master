@@ -6,11 +6,6 @@
  * Time: 10:55
  */
 
-
-
-
-#top-cta, #top-cta h2, #top-cta p
-
 // CSS output for cutomizer CSS modifications
 if ( is_customize_preview() ) {
 

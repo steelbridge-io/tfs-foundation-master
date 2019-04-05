@@ -1,41 +1,6 @@
 ( function( $ ) {
 "use strict";
-	// Front Page Slider Image #1
-/*	wp.customize( 'fp-topslider-one', function(value) {
-		value.bind(function(to){
-			var fpsliderone = $( '.orbit-image.orbit-image-one' );
-			fpsliderone.attr( 'src', to );
-		});
-	});*/
 
-  // Front Page Slider Image #2
-	/*wp.customize( 'fp-topslider-two', function(value) {
-		value.bind(function(to){
-			var fpsliderone = $( '.orbit-image.orbit-image-two' );
-			fpsliderone.attr( 'src', to );
-		});
-	});*/
-  
- /* wp.customize( 'fp-topslider-two-caption', function( value ) {
-    value.bind( function( to ) {
-      $( '.orbit-caption.orbit-caption-two' ).text( to );
-    } );
-  } ); */
-  
-  // Front Page Slider Image #3
-	/*wp.customize( 'fp-topslider-three', function(value) {
-		value.bind(function(to){
-			var fpsliderone = $( '.orbit-image.orbit-image-three' );
-			fpsliderone.attr( 'src', to );
-		});
-	});*/
-  
-  /* wp.customize( 'fp-topslider-three-caption', function( value ) {
-    value.bind( function( to ) {
-      $( '.orbit-caption.orbit-caption-three' ).text( to );
-    } );
-  } ); */
-  
   // Front Page Slider Image #4
 	wp.customize( 'fp-topslider-four', function(value) {
 		value.bind(function(to){
@@ -49,18 +14,6 @@
       $( 'videobg-hide-controls iframe' ).text( to );
     } );
   } );
-
-  wp.customize( 'fp-top-widget-bg-color', function( value ) {
-    value.bind( function( to ) {
-      $( '#top-cta' ).css( 'background-color', to );
-    });
-  });
-
-  wp.customize( 'fp-top-widget-txt-color', function( value ) {
-    value.bind( function( to ) {
-      $( '#top-cta, #top-cta h2, #top-cta p' ).css( 'color', to );
-    });
-  });
 
   wp.customize( 'fp-movie-comment', function( value ) {
     value.bind( function( to ) {

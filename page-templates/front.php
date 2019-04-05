@@ -133,7 +133,9 @@ get_header(); ?>
 	</div>
 </section>
 <section>
+	<!-- TOP WIDGET -->
 	<div id="top-cta" class="row align-middle">
+		<div class="topcta-selector"></div>
 		<div class="left-top-widget columns large-8 small-12"><?php dynamic_sidebar('front-top-widget-left'); ?></div>
 		<div class="right-top-widget columns"><?php dynamic_sidebar('front-top-widget-right'); ?></div>
 	</div>
@@ -144,28 +146,30 @@ get_header(); ?>
 
 		<div id="fp-video-container" class="cell small-12 large-6 device-margins">
 			<?php
-			$fp_youtube 			= get_theme_mod( 'fp-youtube', $default = false );
+			$fp_youtube 			= get_theme_mod( 'fp-youtube', '' );
 			$fp_movie_mp4			= get_theme_mod( 'fp-movie-mp4', $default = false );
 			$fp_movie_webm		= get_theme_mod( 'fp-movie-webm', $default = false );
 			$fp_movie_comment	= get_theme_mod( 'fp-movie-comment', $default = false );
-			if( get_theme_mod('fp-youtube') !== '' ) : ?>
-				<div class="videobg"> .
+			if( !empty($fp_youtube) ) : ?>
+				<div class="videobg">
 					<div class="videobg-width">
 						<div class="videobg-aspect">
 							<div class="videobg-make-height">
 								<div class="videobg-hide-controls">
-									<iframe width="100%" height="100%" src="https://www.youtube
-								.com/embed/<?php echo $fp_youtube; ?>?rel=0&autoplay=1&loop=1&mute=1&controls=0"
-													frameborder="0" allow="accelerometer;
-								encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+								<?php
+								function fp_youtube() {
+									echo '<iframe width="100%" height="100%" class="youtube-vid" src="https://www.youtube.com/embed/'.get_theme_mod('fp-youtube').'?rel=0&autoplay=1&loop=1&mute=1&controls=0" frameborder="0"
+									allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+								}
+								fp_youtube();
+								?>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			<?php elseif( $fp_youtube || $fp_movie_mp4 ) :  ?>
+				<?php elseif(!empty( $fp_movie_mp4 || $fp_movie_webm )) : ?>
 				<div class="promo">
-					<!--poster="/assets/img/video-path.jpg"-->
 					<video autoplay loop muted id="video_bg">
 						<source src="<?php echo $fp_movie_webm; ?>" type="video/webm">
 						<source src="<?php echo $fp_movie_mp4; ?>" type="video/mp4">
@@ -178,7 +182,7 @@ get_header(); ?>
 						</div>
 					</div>
 				</div>
-			<?php elseif( empty($fp_youtube) && empty($fp_movie_mp4) && empty($fp_movie_webm) ) : ?>
+			<?php elseif(empty( $fp_youtube && $fp_movie_mp4 && $fp_movie_mp4 )) : ?>
 				<div class="portfolio-orbit orbit" role="region" aria-label="Favorite Space Pictures"
 						 data-orbit data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;">
 					<div class="orbit-wrapper">
