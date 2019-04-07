@@ -376,7 +376,7 @@ if (! function_exists('wpt_register_theme_customizer')) :
 		);
 		// Front Page Top Widget Text Color Selective Refresh
 		$wp_customize->selective_refresh->add_partial('fp-top-widget-txt-color', array(
-				'selector' => '.orbit-caption.orbit-caption-four',
+				'selector' => '.topcta-text-color',
 				'settings' => 'fp-top-widget-txt-color',
 				'render_callback' => 'output'
 			)
@@ -477,7 +477,7 @@ if (! function_exists('wpt_register_theme_customizer')) :
 			'default' => '',
 			'type' => 'theme_mod',
 			'transport' => 'postMessage',
-			'sanitize_callback' => 'wp_kses_post'
+			'sanitize_callback' => 'theme_slug_sanitize_html'
 		));
 		$wp_customize->add_control('fp-movie-comment', array(
 			'default' => '',
@@ -607,12 +607,14 @@ if (! function_exists('wpt_register_theme_customizer')) :
 
 		///////////////// TOP CARD IMAGE & CAPTION
 
-		//Top Card Image
+		//Top Card Image Setting
 		$wp_customize->add_setting('fp-topcard-img', array(
-			'default' => '',
-			'type' => 'theme_mod',
-			'transport' => 'postMessage'
-		));
+				'default' => '',
+				'type' => 'theme_mod',
+				'transport' => 'postMessage'
+			)
+		);
+		// Top Card Image Control
 		$wp_customize->add_control(
 			new WP_Customize_Image_Control (
 				$wp_customize,
@@ -626,14 +628,22 @@ if (! function_exists('wpt_register_theme_customizer')) :
 				)
 			)
 		);
+		// Top Card Image Selective Refresh
+		$wp_customize->selective_refresh->add_partial('fp-topcard-img', array(
+				'selector' 				=> '.topcard-label-refresh',
+				'settings' 				=> 'fp-topcard-img',
+				'render_callback' => 'output'
+			)
+		);
 
-		// Top Card Image Label
+		// Top Card Image Label Setting
 		$wp_customize->add_setting('fp-topcard-label', array(
 			'default' => '',
 			'type' => 'theme_mod',
 			'transport' => 'postMessage',
-			//'sanitize_callback' => 'wp_kses'
+			'sanitize_callback' => 'theme_slug_sanitize_html'
 		));
+		// Top Card Image Label Control
 		$wp_customize->add_control(
 			new WP_Customize_Control (
 				$wp_customize,
@@ -647,14 +657,24 @@ if (! function_exists('wpt_register_theme_customizer')) :
 				)
 			)
 		);
+		// Top Card Image Selective Refresh
+		$wp_customize->selective_refresh->add_partial('fp-topcard-label', array(
+				'selector' 				=> '#topcard .card-divider',
+				'settings' 				=> 'fp-topcard-label',
+				'render_callback' => function() {
+					return get_theme_mod('fp-topcard-label');
+				}
+			)
+		);
 
-		// Top Card Image Label Color
+		// Top Card Image Label Color Setting
 		$wp_customize->add_setting('fp-topcard-label-color', array(
 			'default' => '#f5f5f5',
 			'type' => 'theme_mod',
 			'sanitize_callback' => 'sanitize_hex_color',
 			'transport' => 'postMessage'
 		));
+		// Top Card Image Label Color Control
 		$wp_customize->add_control(
 			new WP_Customize_Color_Control(
 				$wp_customize,
@@ -666,14 +686,23 @@ if (! function_exists('wpt_register_theme_customizer')) :
 				)
 			)
 		);
+		// Top Card Image Label Color Selective Refresh
+		$wp_customize->selective_refresh->add_partial('fp-topcard-label-color', array(
+				'selector' => '.topcard-label-refresh-color',
+				'settings' => array('fp-topcard-label-color'),
+				'render_callback' => 'output'
+			)
+		);
 
-		// Top Card Text Background Color
+		// Top Card Text Area Background Color Setting
 		$wp_customize->add_setting('fp-topcard-bg-color', array(
-			'default' => '#f5f5f5',
-			'type' => 'theme_mod',
-			'sanitize_callback' => 'sanitize_hex_color',
-			'transport' => 'postMessage'
-		));
+				'default' => '#f5f5f5',
+				'type' => 'theme_mod',
+				'sanitize_callback' => 'sanitize_hex_color',
+				'transport' => 'postMessage'
+			)
+		);
+		// Top Card Text Area Background Color Control
 		$wp_customize->add_control(
 			new WP_Customize_Color_Control(
 				$wp_customize,
@@ -685,14 +714,23 @@ if (! function_exists('wpt_register_theme_customizer')) :
 				)
 			)
 		);
+		// Top Card Text Area Background Color
+		$wp_customize->selective_refresh->add_partial('fp-topcard-bg-color', array(
+				'selector' => '.top-card-text-refresh',
+				'settings' => array('fp-topcard-bg-color'),
+				'render_callback' => 'output'
+			)
+		);
 
-		// Top Card Text Color
+		// Top Card Text Color Setting
 		$wp_customize->add_setting('fp-topcard-txt-color', array(
-			'default' => '#f5f5f5',
-			'type' => 'theme_mod',
-			'sanitize_callback' => 'sanitize_hex_color',
-			'transport' => 'postMessage'
-		));
+				'default' => '#f5f5f5',
+				'type' => 'theme_mod',
+				'sanitize_callback' => 'sanitize_hex_color',
+				'transport' => 'postMessage'
+			)
+		);
+		// Top Card Text Color Control
 		$wp_customize->add_control(
 			new WP_Customize_Color_Control(
 				$wp_customize,
@@ -702,6 +740,13 @@ if (! function_exists('wpt_register_theme_customizer')) :
 					'section' => 'fp_card_section',
 					'settings' => 'fp-topcard-txt-color'
 				)
+			)
+		);
+		// Top Card Text Color Selective Refresh
+		$wp_customize->selective_refresh->add_partial('fp-topcard-txt-color', array(
+				'selector' => '.top-card-text-refresh',
+				'settings' => array('fp-topcard-txt-color'),
+				'render_callback' => 'output'
 			)
 		);
 
@@ -721,17 +766,28 @@ if (! function_exists('wpt_register_theme_customizer')) :
 					'settings' => 'fp-topcard-cap',
 					'type' => 'textarea',
 					'priority' => 10,
-					'sanitize_callback' => 'esc_url_raw',
+					'sanitize_callback' => 'theme_slug_sanitize_html',
 				)
 			)
 		);
+		// Top Card Text Color Selective Refresh
+		$wp_customize->selective_refresh->add_partial('fp-topcard-cap', array(
+				'selector' => '#topcardid.card-section',
+				'settings' => array('fp-topcard-cap'),
+				'render_callback' => function() {
+					return get_theme_mod( 'fp-topcard-cap');
+				}
+			)
+		);
 
-		// Bottom Card Image
+		// Bottom Card Image Setting
 		$wp_customize->add_setting('fp-bottomcard-img', array(
-			'default' => '',
-			'type' => 'theme_mod',
-			'transport' => 'postMessage'
-		));
+				'default' => '',
+				'type' => 'theme_mod',
+				'transport' => 'postMessage'
+			)
+		);
+		// Bottom Card Image Control
 		$wp_customize->add_control(
 			new WP_Customize_Image_Control (
 				$wp_customize,
@@ -745,13 +801,22 @@ if (! function_exists('wpt_register_theme_customizer')) :
 				)
 			)
 		);
+		// Bottom Card Image Selective Refresh
+		$wp_customize->selective_refresh->add_partial('fp-bottomcard-img', array(
+				'selector' => '.bottom-card-text-refresh',
+				'settings' => array('fp-bottomcard-img'),
+				'render_callback' => 'output'
+			)
+		);
 
-		// Bottom Card Image Label
+		// Bottom Card Image Label Setting
 		$wp_customize->add_setting('fp-bottomcard-label', array(
-			'default' => '',
-			'type' => 'theme_mod',
-			'transport' => 'postMessage'
-		));
+				'default' => '',
+				'type' => 'theme_mod',
+				'transport' => 'postMessage'
+			)
+		);
+		// Bottom Card Image Lable Control
 		$wp_customize->add_control(
 			new WP_Customize_Control (
 				$wp_customize,
@@ -762,18 +827,28 @@ if (! function_exists('wpt_register_theme_customizer')) :
 					'settings' => 'fp-bottomcard-label',
 					'type' => 'text',
 					'priority' => 10,
-					'sanitize_callback' => 'esc_url_raw',
+					'sanitize_callback' => 'theme_slug_sanitize_html',
 				)
 			)
 		);
+		// Bottom Card Image Label Selective Refresh
+		$wp_customize->selective_refresh->add_partial('fp-bottomcard-label', array(
+				'selector' => '.bottomcard .card-divider',
+				'settings' => array('fp-bottomcard-label'),
+				'render_callback' => function() {
+					return get_theme_mod('fp-bottomcard-label');
+				}
+			)
+		);
 
-		// Bottom Card Image Label Color
+		// Bottom Card Image Label Color Setting
 		$wp_customize->add_setting('fp-bottomcard-label-color', array(
 			'default' => '#f5f5f5',
 			'type' => 'theme_mod',
 			'sanitize_callback' => 'sanitize_hex_color',
 			'transport' => 'postMessage'
 		));
+		// Bottom Card Image Label Color Control
 		$wp_customize->add_control(
 			new WP_Customize_Color_Control(
 				$wp_customize,
@@ -785,14 +860,23 @@ if (! function_exists('wpt_register_theme_customizer')) :
 				)
 			)
 		);
+		// Bottom Card Image Label Color Selective Refresh
+		$wp_customize->selective_refresh->add_partial('fp-bottomcard-label-color', array(
+				'selector' => '.bottom-card-text-refresh',
+				'settings' => array('fp-bottomcard-label-color'),
+				'render_callback' => 'output'
+			)
+		);
 
-		// Bottom Card Content Background Color
+		// Bottom Card Content Background Color Setting
 		$wp_customize->add_setting('fp-bottomcard-bg-color', array(
-			'default' => '#f5f5f5',
-			'type' => 'theme_mod',
-			'sanitize_callback' => 'sanitize_hex_color',
-			'transport' => 'postMessage'
-		));
+				'default' => '#f5f5f5',
+				'type' => 'theme_mod',
+				'sanitize_callback' => 'sanitize_hex_color',
+				'transport' => 'postMessage'
+			)
+		);
+		// Bottom Card Content Background Color Control
 		$wp_customize->add_control(
 			new WP_Customize_Color_Control(
 				$wp_customize,
@@ -804,14 +888,23 @@ if (! function_exists('wpt_register_theme_customizer')) :
 				)
 			)
 		);
+		// Bottom Card Content Background Color Selective Refresh
+		$wp_customize->selective_refresh->add_partial('fp-bottomcard-bg-color', array(
+				'selector' => '.bottom-card-textarea-refresh',
+				'settings' => array('fp-bottomcard-bg-color'),
+				'render_callback' => 'output'
+			)
+		);
 
-		// Bottom Card Image Label Color
+		// Bottom Card Text Color Setting
 		$wp_customize->add_setting('fp-bottomcard-txt-color', array(
-			'default' => '#f5f5f5',
-			'type' => 'theme_mod',
-			'sanitize_callback' => 'sanitize_hex_color',
-			'transport' => 'postMessage'
-		));
+				'default' => '#f5f5f5',
+				'type' => 'theme_mod',
+				'sanitize_callback' => 'sanitize_hex_color',
+				'transport' => 'postMessage'
+			)
+		);
+		// Bottom Card Text Color Control
 		$wp_customize->add_control(
 			new WP_Customize_Color_Control(
 				$wp_customize,
@@ -823,7 +916,13 @@ if (! function_exists('wpt_register_theme_customizer')) :
 				)
 			)
 		);
-
+		// Bottom Card Text Color Control Selective Refresh
+		$wp_customize->selective_refresh->add_partial('fp-bottomcard-txt-color', array(
+				'selector' => '.bottom-card-textarea-refresh',
+				'settings' => array('fp-bottomcard-txt-color'),
+				'render_callback' => 'output'
+			)
+		);
 		// Bottom Card Caption
 		$wp_customize->add_setting('fp-bottomcard-cap', array(
 			'default' => '',
@@ -842,6 +941,15 @@ if (! function_exists('wpt_register_theme_customizer')) :
 					'priority' => 10,
 					'sanitize_callback' => 'esc_url_raw',
 				)
+			)
+		);
+		// Bottom Card Text Color Control Selective Refresh
+		$wp_customize->selective_refresh->add_partial('fp-bottomcard-cap', array(
+				'selector' => '#bottomcardid.card-section',
+				'settings' => array('fp-bottomcard-cap'),
+				'render_callback' => function() {
+					return get_theme_mod('fp-bottomcard-cap');
+				}
 			)
 		);
 
@@ -923,7 +1031,6 @@ if (! function_exists('wpt_register_theme_customizer')) :
 			)
 		);
 
-		//$transport = ( $wp_customize->selective_refresh ? 'postMessage' : 'refresh' );
 		$wp_customize->add_setting('fp-divider-content', array(
 			'type' => 'theme_mod',
 			'default' => '',

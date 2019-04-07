@@ -50,61 +50,13 @@
       $('li.orbit-item-4').css('background-image', 'url(' + to + ')');
     });
   });
-  
-  wp.customize( 'fp-topcard-img', function(value) {
-    value.bind(function(to){
-      $('.topcard.card .card-divider').css('background-image', 'url(' + to + ')');
-    });
-  });
 
-  wp.customize( 'fp-topcard-label', function( value ) {
-    value.bind( function( to ) {
-      $( '.topcard .card-divider' ).text( to );
-    } );
-  } );
-
-  wp.customize( 'fp-topcard-label-color', function( value ) {
-    value.bind( function( newval ) {
-      $('.topcard .card-divider').css('color', newval );
-    } );
-  } );
-  
   wp.customize( 'fp-topcard-cap', function( value ) {
     value.bind( function( to ) {
       $( '#topcardid' ).text( to );
     } );
   } );
 
-  wp.customize( 'fp-topcard-bg-color', function( value ) {
-    value.bind( function( to ) {
-      $( '#topcardid' ).css('background-color', to );
-    });
-  });
-
-  wp.customize( 'fp-topcard-txt-color', function( value ) {
-    value.bind( function( to ) {
-      $( '#topcardid, #topcardid h2, #topcardid p' ).css( 'color', to );
-    });
-  });
-  
-   wp.customize( 'fp-bottomcard-img', function(value) {
-    value.bind(function(to){
-      $('.bottomcard.card .card-divider').css('background-image', 'url(' + to + ')');
-    });
-  });
-
-  wp.customize( 'fp-bottomcard-label', function( value ) {
-    value.bind( function( to ) {
-      $( '.bottomcard .card-divider' ).text( to );
-    } );
-  } );
-
-  wp.customize( 'fp-bottomcard-label-color', function( value ) {
-    value.bind( function( newval ) {
-      $('.bottomcard .card-divider').css('color', newval );
-    } );
-  } );
-  
   wp.customize( 'fp-bottomcard-cap', function( value ) {
     value.bind( function( to ) {
       $( '#bottomcardid' ).text( to );
@@ -115,18 +67,6 @@
     value.bind( function( to ) {
      	var fpparallaxtop = $( '#parallaxone.parallax-window' );
 			fpparallaxtop.attr( 'data-image-src', to );
-    });
-  });
-
-  wp.customize( 'fp-bottomcard-txt-color', function( value ) {
-    value.bind( function( to ) {
-      $( '#bottomcardid, #bottomcardid h2, #bottomcardid p' ).css( 'color', to );
-    });
-  });
-
-  wp.customize( 'fp-bottomcard-bg-color', function( value ) {
-    value.bind( function( to ) {
-      $( '#bottomcardid' ).css('background-color', to );
     });
   });
 

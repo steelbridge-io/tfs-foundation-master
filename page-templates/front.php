@@ -135,7 +135,7 @@ get_header(); ?>
 <section>
 	<!-- TOP WIDGET -->
 	<div id="top-cta" class="row align-middle">
-		<div class="topcta-selector"></div>
+		<span class="topcta-selector topcta-text-color"></span>
 		<div class="left-top-widget columns large-8 small-12"><?php dynamic_sidebar('front-top-widget-left'); ?></div>
 		<div class="right-top-widget columns"><?php dynamic_sidebar('front-top-widget-right'); ?></div>
 	</div>
@@ -146,10 +146,11 @@ get_header(); ?>
 
 		<div id="fp-video-container" class="cell small-12 large-6 device-margins">
 			<?php
-			$fp_youtube 			= get_theme_mod( 'fp-youtube', '' );
-			$fp_movie_mp4			= get_theme_mod( 'fp-movie-mp4', $default = false );
-			$fp_movie_webm		= get_theme_mod( 'fp-movie-webm', $default = false );
-			$fp_movie_comment	= get_theme_mod( 'fp-movie-comment', $default = false );
+			$default = '';
+			$fp_youtube 			= get_theme_mod( 'fp-youtube', $default );
+			$fp_movie_mp4			= get_theme_mod( 'fp-movie-mp4', $default );
+			$fp_movie_webm		= get_theme_mod( 'fp-movie-webm', $default );
+			$fp_movie_comment	= get_theme_mod( 'fp-movie-comment', $default );
 			if( !empty($fp_youtube) ) : ?>
 				<div class="videobg">
 					<div class="videobg-width">
@@ -222,28 +223,31 @@ get_header(); ?>
 		</div>
 
 		<div id="sidecards" class="cell small-12 large-6">
-
-			<div class="topcard card">
+			<div id="topcard" class="topcard card">
+				<span class="topcard-label-refresh topcard-label-refresh-color"></span>
 				<div class="card-divider-before">
-					<div class="card-divider">
-						<?php $fp_topcard_label = get_theme_mod( 'fp-topcard-label' ); ?>
-						<?php echo $fp_topcard_label; ?>
+					<?php $top_card_lable = get_theme_mod('fp-topcard-label'); ?>
+					<div id="top-card" class="card-divider card-divider-top">
+						<?php echo $top_card_lable; ?>
 					</div>
 				</div>
 				<?php $top_text = get_theme_mod('fp-topcard-cap'); ?>
+				<span class="top-card-text-refresh"></span>
 				<div id="topcardid" class="card-section">
 					<?php echo $top_text; ?>
 				</div>
 			</div>
 
-			<div class="bottomcard card">
+			<div id="bottom-card" class="bottomcard card">
+				<span class="bottom-card-text-refresh"></span>
 				<div class="card-divider-before">
-					<div class="card-divider">
+					<div class="card-divider card-divider-bottom">
 						<?php $fp_bottomcard_label =get_theme_mod( 'fp-bottomcard-label' ); ?>
 						<?php echo $fp_bottomcard_label; ?>
 					</div>
 				</div>
 				<?php $bottom_text = get_theme_mod('fp-bottomcard-cap'); ?>
+				<span class="bottom-card-textarea-refresh"></span>
 				<div id="bottomcardid" class="card-section">
 					<?php echo $bottom_text; ?>
 				</div>

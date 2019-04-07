@@ -282,10 +282,10 @@ if ( ! function_exists( 'foundationpress_scripts' ) ) :
 
 		$general_customizer_css .= '
 			
-			#topcardid {
+			#topcardid.card-section {
 				background-color: ' . $fp_topcard_bg_color . ';
 			}
-			.topcard .card-divider {
+			#top-card, #top-card h4 {
 				color: ' . $fp_topcard_label_color . ';
 			}
 			#topcardid, #topcardid h2, #topcardid p {
