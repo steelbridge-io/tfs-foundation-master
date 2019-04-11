@@ -70,6 +70,29 @@ body {
 
 /** Footer
 ---------------------------------- **/
+
+/* Footer
+--------------------- ****/
+#footer {
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    color: #fff;
+  }
+  .footer-container.container-flex {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+  }
+
+  section.widget.widget_search {
+    align-self: center;
+  }
+}
+
 $marketing-site-footer-bg: #2c3840;
 
 .marketing-site-footer {
@@ -297,11 +320,11 @@ body.sticky-shrinknav-wrapper .sticky-shrinknav-header .logoimg .fplogo.sticky-s
 }
 
 .marketing-site-content-section-block-header {
-  font-size: 24px;
+  font-size: 40px;
 }
 
 .marketing-site-content-section-block-subheader {
-  font-size: 13px;
+  font-size: 20px;
 }
 /* End Marketing Template */
 

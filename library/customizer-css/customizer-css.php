@@ -15,14 +15,13 @@ if( is_customize_preview() ) {
 
 		$fptopbgcolor_color 				= get_theme_mod('fp-top-widget-bg-color' );
 		$fptoptxtcolor							= get_theme_mod('fp-top-widget-txt-color' );
-		$top_cardimage 							= get_theme_mod('fp-topcard-img');
 		$fp_topcard_label_color			= get_theme_mod('fp-topcard-label-color' );
-		$fp_topcard_bg_color				= get_theme_mod( 'fp-topcard-bg-color' );
-		$fp_topcard_txt_color 			= get_theme_mod( 'fp-topcard-txt-color' );
+		$fp_topcard_bg_color				= get_theme_mod('fp-topcard-bg-color' );
+		$fp_topcard_txt_color 			= get_theme_mod('fp-topcard-txt-color' );
 		$fp_bottomcard_img					= get_theme_mod('fp-bottomcard-img' );
-		$fp_bottomcard_label_color 	= get_theme_mod ( 'fp-bottomcard-label-color' );
-		$fp_bottomcard_bg_color 		= get_theme_mod ( 'fp-bottomcard-bg-color' );
-		$fp_bottomcard_txt_color 		= get_theme_mod ('fp-bottomcard-txt-color' );
+		$fp_bottomcard_label_color 	= get_theme_mod('fp-bottomcard-label-color' );
+		$fp_bottomcard_bg_color 		= get_theme_mod('fp-bottomcard-bg-color' );
+		$fp_bottomcard_txt_color 		= get_theme_mod('fp-bottomcard-txt-color' );
 
 		echo '#top-cta {
 						background-color: ' . $fptopbgcolor_color . ';
@@ -39,19 +38,7 @@ if( is_customize_preview() ) {
 					'#topcardid, #topcardid h2, #topcardid p {
 						color: ' . $fp_topcard_txt_color . ';
 					}' .
-					'.topcard.card .card-divider::after {
-						background: url('. $top_cardimage .') no-repeat center;
-						background-size: cover;
-						content: "";
-						opacity: 0.5;
-						top: 0;
-						left: 0;
-						bottom: 0;
-						right: 0;
-						position: absolute;
-						z-index: 1;
-					};' .
-					'.bottomcard.card .card-divider::after {
+					' .bottomcard.card .card-divider-before .card-divider::after {
 						background: url('. $fp_bottomcard_img .') no-repeat center;
 						background-size: cover;
 						content: "";
@@ -97,6 +84,27 @@ if( is_customize_preview() ) {
 					}'
 		;
 
+		echo '</style>';
+	}
+
+	function top_card_img() {
+
+		echo '<style>';
+
+		$top_cardimage 	= get_theme_mod('fp-topcard-img');
+
+		echo '.topcard.card .card-divider-before .card-divider::after {
+						background: url('. $top_cardimage .') no-repeat center;
+						background-size: cover;
+						content: "";
+						opacity: 0.5;
+						top: 0;
+						left: 0;
+						bottom: 0;
+						right: 0;
+						position: absolute;
+						z-index: 1;
+					}';
 		echo '</style>';
 	}
 

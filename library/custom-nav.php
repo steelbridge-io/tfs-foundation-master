@@ -624,15 +624,15 @@ if (! function_exists('wpt_register_theme_customizer')) :
 					'section' => 'fp_card_section',
 					'settings' => 'fp-topcard-img',
 					'priority' => 10,
-					'sanitize_callback' => 'esc_url_raw',
+					//'sanitize_callback' => 'esc_url_raw',
 				)
 			)
 		);
 		// Top Card Image Selective Refresh
 		$wp_customize->selective_refresh->add_partial('fp-topcard-img', array(
-				'selector' 				=> '.topcard-label-refresh',
+				'selector' 				=> '.topcard-image-refresh',
 				'settings' 				=> 'fp-topcard-img',
-				'render_callback' => 'output'
+				'render_callback' => 'top_card_img'
 			)
 		);
 
@@ -797,14 +797,14 @@ if (! function_exists('wpt_register_theme_customizer')) :
 					'section' => 'fp_card_section',
 					'settings' => 'fp-bottomcard-img',
 					'priority' => 10,
-					'sanitize_callback' => 'esc_url_raw',
+					//'sanitize_callback' => 'esc_url_raw',
 				)
 			)
 		);
 		// Bottom Card Image Selective Refresh
 		$wp_customize->selective_refresh->add_partial('fp-bottomcard-img', array(
-				'selector' => '.bottom-card-text-refresh',
-				'settings' => array('fp-bottomcard-img'),
+				'selector' => '.bottom-card-img-refresh',
+				'settings' => 'fp-bottomcard-img',
 				'render_callback' => 'output'
 			)
 		);
