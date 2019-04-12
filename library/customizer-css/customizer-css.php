@@ -22,6 +22,10 @@ if( is_customize_preview() ) {
 		$fp_bottomcard_label_color 	= get_theme_mod('fp-bottomcard-label-color' );
 		$fp_bottomcard_bg_color 		= get_theme_mod('fp-bottomcard-bg-color' );
 		$fp_bottomcard_txt_color 		= get_theme_mod('fp-bottomcard-txt-color' );
+		$mk_grid_bg_color 					= get_theme_mod('mk-grid-bg-color');
+		$mk_grid_font_color					= get_theme_mod('mk-grid-font-color');
+		$mk_grid_button_color				= get_theme_mod('mk-grid-button-color');
+		$mk_grid_button_font_color	= get_theme_mod('mk-grid-button-font-color');
 
 		echo '#top-cta {
 						background-color: ' . $fptopbgcolor_color . ';
@@ -81,6 +85,19 @@ if( is_customize_preview() ) {
 					}' .
 					'#bottomcardid.card-section .customize-partial-edit-shortcut-button {
 						margin-top: 1em;
+					}' .
+					'.marketing-site-content-section .marketing-site-content-section-block {
+		 				background-color:' . $mk_grid_bg_color . ';
+		 			}' .
+					'.marketing-site-content-section-block-header,
+					 .marketing-site-content-section-block-subheader.subheader{
+					 	color:'. $mk_grid_font_color .';
+					 }' .
+					'.mk-grid.round.button.small {
+						background-color:' . $mk_grid_button_color . ';
+					}' .
+					'.mk-grid.round.button.small {
+						color:' . $mk_grid_button_font_color .';
 					}'
 		;
 

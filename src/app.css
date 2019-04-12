@@ -1,31 +1,24 @@
 /*
-Error: Undefined mixin 'add-foundation-colors'.
-        on line 104 of _settings.scss, in `add-foundation-colors'
-        from line 104 of _settings.scss
-        from line 3 of app.scss
+Error: File to import not found or unreadable: foundation.
+        on line 4 of app.scss
+
+1: @charset "utf-8";
+2: 
+3: @import 'settings';
+4: @import 'foundation';
+5: @import 'motion-ui';
+6: 
+7: @include foundation-global-styles;
+8: @include foundation-grid;
+9: @include foundation-flex-grid;
 
 Backtrace:
-_settings.scss:104:in `add-foundation-colors'
-_settings.scss:104
-app.scss:3
-/Users/chrisparsons/.rvm/gems/ruby-2.4.2/gems/sass-3.7.3/lib/sass/tree/visitors/perform.rb:348:in `block in visit_mixin'
-/Users/chrisparsons/.rvm/gems/ruby-2.4.2/gems/sass-3.7.3/lib/sass/stack.rb:98:in `block in with_mixin'
-/Users/chrisparsons/.rvm/gems/ruby-2.4.2/gems/sass-3.7.3/lib/sass/stack.rb:135:in `with_frame'
-/Users/chrisparsons/.rvm/gems/ruby-2.4.2/gems/sass-3.7.3/lib/sass/stack.rb:98:in `with_mixin'
-/Users/chrisparsons/.rvm/gems/ruby-2.4.2/gems/sass-3.7.3/lib/sass/tree/visitors/perform.rb:346:in `visit_mixin'
-/Users/chrisparsons/.rvm/gems/ruby-2.4.2/gems/sass-3.7.3/lib/sass/tree/visitors/base.rb:36:in `visit'
-/Users/chrisparsons/.rvm/gems/ruby-2.4.2/gems/sass-3.7.3/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
-/Users/chrisparsons/.rvm/gems/ruby-2.4.2/gems/sass-3.7.3/lib/sass/stack.rb:79:in `block in with_base'
-/Users/chrisparsons/.rvm/gems/ruby-2.4.2/gems/sass-3.7.3/lib/sass/stack.rb:135:in `with_frame'
-/Users/chrisparsons/.rvm/gems/ruby-2.4.2/gems/sass-3.7.3/lib/sass/stack.rb:79:in `with_base'
-/Users/chrisparsons/.rvm/gems/ruby-2.4.2/gems/sass-3.7.3/lib/sass/tree/visitors/perform.rb:158:in `visit'
-/Users/chrisparsons/.rvm/gems/ruby-2.4.2/gems/sass-3.7.3/lib/sass/tree/visitors/perform.rb:325:in `block (2 levels) in visit_import'
-/Users/chrisparsons/.rvm/gems/ruby-2.4.2/gems/sass-3.7.3/lib/sass/tree/visitors/perform.rb:325:in `map'
-/Users/chrisparsons/.rvm/gems/ruby-2.4.2/gems/sass-3.7.3/lib/sass/tree/visitors/perform.rb:325:in `block in visit_import'
-/Users/chrisparsons/.rvm/gems/ruby-2.4.2/gems/sass-3.7.3/lib/sass/stack.rb:88:in `block in with_import'
-/Users/chrisparsons/.rvm/gems/ruby-2.4.2/gems/sass-3.7.3/lib/sass/stack.rb:135:in `with_frame'
-/Users/chrisparsons/.rvm/gems/ruby-2.4.2/gems/sass-3.7.3/lib/sass/stack.rb:88:in `with_import'
-/Users/chrisparsons/.rvm/gems/ruby-2.4.2/gems/sass-3.7.3/lib/sass/tree/visitors/perform.rb:322:in `visit_import'
+app.scss:4
+/Users/chrisparsons/.rvm/gems/ruby-2.4.2/gems/sass-3.7.3/lib/sass/tree/import_node.rb:67:in `rescue in import'
+/Users/chrisparsons/.rvm/gems/ruby-2.4.2/gems/sass-3.7.3/lib/sass/tree/import_node.rb:45:in `import'
+/Users/chrisparsons/.rvm/gems/ruby-2.4.2/gems/sass-3.7.3/lib/sass/tree/import_node.rb:28:in `imported_file'
+/Users/chrisparsons/.rvm/gems/ruby-2.4.2/gems/sass-3.7.3/lib/sass/tree/import_node.rb:37:in `css_import?'
+/Users/chrisparsons/.rvm/gems/ruby-2.4.2/gems/sass-3.7.3/lib/sass/tree/visitors/perform.rb:310:in `visit_import'
 /Users/chrisparsons/.rvm/gems/ruby-2.4.2/gems/sass-3.7.3/lib/sass/tree/visitors/base.rb:36:in `visit'
 /Users/chrisparsons/.rvm/gems/ruby-2.4.2/gems/sass-3.7.3/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
 /Users/chrisparsons/.rvm/gems/ruby-2.4.2/gems/sass-3.7.3/lib/sass/stack.rb:79:in `block in with_base'
@@ -65,4 +58,4 @@ app.scss:3
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined mixin 'add-foundation-colors'.\A         on line 104 of _settings.scss, in `add-foundation-colors'\A         from line 104 of _settings.scss\A         from line 3 of app.scss"; }
+  content: "Error: File to import not found or unreadable: foundation.\A         on line 4 of app.scss\A \A 1: @charset \"utf-8\";\A 2: \A 3: @import 'settings';\A 4: @import 'foundation';\A 5: @import 'motion-ui';\A 6: \A 7: @include foundation-global-styles;\A 8: @include foundation-grid;\A 9: @include foundation-flex-grid;"; }

@@ -62,7 +62,9 @@
 //  56. Xy Grid
 
 //@import 'util/util';
+@import '../../../node_modules/foundation-sites/scss/util/util';
 @import 'global/colors';
+
 
 // 1. Global
 // ---------
@@ -101,7 +103,7 @@ $global-button-cursor: auto;
 $global-color-pick-contrast-tolerance: 0;
 $print-transparent-backgrounds: true;
 
-@include add-foundation-colors;
+//@include add-foundation-colors;
 
 // 2. Breakpoints
 // --------------
@@ -448,6 +450,7 @@ $input-transition: box-shadow 0.5s, border-color 0.25s ease-in-out;
 $input-number-spinners: true;
 $input-radius: $global-radius;
 $form-button-radius: $global-radius;
+
 
 // 21. Label
 // ---------

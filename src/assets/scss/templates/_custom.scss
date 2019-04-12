@@ -30,7 +30,6 @@ body {
   background-color: #ffffff;
   font-family: 'Heebo', sans-serif;
 }
-
 /** Card
 --------------------------------- **/
 .card .card-divider {
@@ -279,6 +278,9 @@ body.sticky-shrinknav-wrapper .sticky-shrinknav-header .logoimg .fplogo.sticky-s
 }
 
 /* Marketing Template */
+a:hover.mk-grid.round.button.small {
+  opacity: 0.8;
+}
 .marketing-site-content-section {
   display: flex;
   flex-wrap: wrap;
@@ -306,7 +308,7 @@ body.sticky-shrinknav-wrapper .sticky-shrinknav-header .logoimg .fplogo.sticky-s
     padding: 1rem;
     flex: 1 0 100%;
     align-self: stretch;
-    background: $light-gray;
+    /*background: $light-gray;*/
     display: flex;
     flex-direction: column;
     justify-content: center;
