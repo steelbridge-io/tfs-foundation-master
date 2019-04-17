@@ -6,6 +6,7 @@
   - Flex Add-ons
   - Footer
   - Foundation Image Plugin
+  - Front Page Blog
   - Front Page Nav
   - Gutenberg
   - Header Image
@@ -260,6 +261,35 @@ $marketing-site-footer-bg: #2c3840;
 }
 .overlay-fade-in:hover .button {
   transition-delay: 0.2s;
+}
+/** Front Page Blog
+------------------------------------- **/
+#front-page-blog-section {
+  padding: 2em 0 2em 0;
+  margin-top: 4em;
+
+  #front-page-blog {
+    margin-left: calc(80% / 8);
+    margin-right: calc(80% / 8);
+  }
+
+  .media-object {
+    margin-bottom: 0;
+  }
+
+  h2.blog-news {
+    text-align: center;
+  }
+
+  .top.media-object-section {
+    display: flex;
+    align-items: center;
+  }
+
+  .thumbnail {
+    border: none;
+    box-shadow: none;
+  }
 }
 
 /** Front Page Nav
@@ -694,6 +724,12 @@ h6, .h6 {
 --------------------------------- **/
 /* Small Only */
 @media screen and (max-width: 39.9375em) {
+
+  #front-page-blog {
+    .media-object {
+      display: initial;
+    }
+  }
   #top-cta .left-top-widget {
     margin-bottom: 1em;
     padding-top: 1.618em;
@@ -715,10 +751,32 @@ h6, .h6 {
 }
 /* Medium and up */
 @media screen and (min-width: 40em) {
+
 }
 
 /* Medium only */
 @media screen and (min-width: 40em) and (max-width: 63.9375em) {
+
+  #front-page-blog {
+
+    .blog-text-section {
+      margin-top: 1.618em;
+    }
+    .thumbnail {
+      display: block;
+      margin: 0 auto;
+      width: 100%;
+    }
+    img{
+      display: block;
+      margin: 0 auto;
+      width: 100%;
+    }
+    .media-object {
+      display: initial;
+    }
+}
+
   #top-cta .left-top-widget {
     margin-bottom: 1em;
     padding-top: 1.618em;
