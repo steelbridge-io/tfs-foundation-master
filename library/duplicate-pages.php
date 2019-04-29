@@ -2,9 +2,9 @@
 /*
 * Function for post duplication. Dups appear as drafts. User is redirected to the edit screen
 */
-function rd_duplicate_post_as_draft(){
+function rd_duplicate_page_as_draft(){
 global $wpdb;
-if (! ( isset( $_GET['post']) || isset( $_POST['post'])  || ( isset($_REQUEST['action']) && 'rd_duplicate_post_as_draft' == $_REQUEST['action'] ) ) ) {
+if (! ( isset( $_GET['post']) || isset( $_POST['post'])  || ( isset($_REQUEST['action']) && 'rd_duplicate_page_as_draft' == $_REQUEST['action'] ) ) ) {
 wp_die('No post to duplicate has been supplied!');
 }
 
@@ -94,7 +94,7 @@ exit;
 wp_die('Post creation failed, could not find original post: ' . $post_id);
 }
 }
-add_action( 'admin_action_rd_duplicate_post_as_draft', 'rd_duplicate_post_as_draft' );
+add_action( 'admin_action_rd_duplicate_page_as_draft', 'rd_duplicate_page_as_draft' );
 
 /*
 * Add the duplicate link to action list for post_row_actions
