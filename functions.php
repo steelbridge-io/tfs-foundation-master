@@ -64,5 +64,8 @@ require_once ( 'library/inc/sanitize_default_fields.php' );
 /** Adds Gutenberg Support */
 require_once ( 'library/gutenberg.php');
 
+/** Adds a duplicate page/post option */
+require_once( 'library/duplicate-pages.php' );
+
 /** If your site requires protocol relative url's for theme assets, uncomment the line below */
 // require_once( 'library/class-foundationpress-protocol-relative-theme-assets.php' );
