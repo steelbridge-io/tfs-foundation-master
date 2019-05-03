@@ -1358,6 +1358,80 @@ if (! function_exists('wpt_register_theme_customizer')) :
 			)
 		);
 
+		//////////////// ADD FOOTER CUSTOMIZER
+		$wp_customize->add_section('footer_section', array(
+			'title' => __('Footer Section', 'foundationpress'),
+			'priority' => 80,
+			'active_callback' => function () {
+				return is_page_template('page-templates/front.php');
+			}
+		));
+ 		// Social Media #1
+		$wp_customize->add_setting( 'facebook_icon_bawx', array(
+			'capability' => 'edit_theme_options',
+			'default' => 'fab fa-facebook',
+			'sanitize_callback' => 'sanitize_text_field',
+		) );
+		$wp_customize->add_control( 'facebook_icon_bawx', array(
+			'type' => 'text',
+			'section' => 'footer_section',
+			'settings' => 'facebook_icon_bawx',
+			'label' => __( 'Add Font Awesome Icon Here.' ),
+			'description' => __( 'Go to fontawseome.com, pick a social media icon. Put it here.' ),
+		) );
+		// Social Media #2
+		$wp_customize->add_setting( 'twitter_icon_bawx', array(
+			'capability' => 'edit_theme_options',
+			'default' => 'fab fa-twitter-square',
+			'sanitize_callback' => 'sanitize_text_field',
+		) );
+		$wp_customize->add_control( 'twitter_icon_bawx', array(
+			'type' => 'text',
+			'section' => 'footer_section',
+			'settings' => 'twitter_icon_bawx',
+			'label' => __( 'Add Font Awesome Icon Here.' ),
+			'description' => __( 'Go to fontawseome.com, pick a social media icon. Put it here.' ),
+		) );
+		// Social Media #3
+		$wp_customize->add_setting( 'instagram_icon_bawx', array(
+			'capability' => 'edit_theme_options',
+			'default' => 'fab fa-instagram',
+			'sanitize_callback' => 'sanitize_text_field',
+		) );
+		$wp_customize->add_control( 'instagram_icon_bawx', array(
+			'type' => 'text',
+			'section' => 'footer_section',
+			'settings' => 'instagram_icon_bawx',
+			'label' => __( 'Add Font Awesome Icon Here.' ),
+			'description' => __( 'Go to fontawseome.com, pick a social media icon. Put it here.' ),
+		) );
+		// Social Media #4
+		$wp_customize->add_setting( 'youtube_icon_bawx', array(
+			'capability' => 'edit_theme_options',
+			'default' => 'fab fa-youtube-square',
+			'sanitize_callback' => 'sanitize_text_field',
+		) );
+		$wp_customize->add_control( 'youtube_icon_bawx', array(
+			'type' => 'text',
+			'section' => 'footer_section',
+			'settings' => 'youtube_icon_bawx',
+			'label' => __( 'Add Font Awesome Icon Here.' ),
+			'description' => __( 'Go to fontawseome.com, pick a social media icon. Put it here.' ),
+		) );
+		// Social Media #5
+		$wp_customize->add_setting( 'email_icon_bawx', array(
+			'capability' => 'edit_theme_options',
+			'default' => 'fas fa-envelope-square',
+			'sanitize_callback' => 'sanitize_text_field',
+		) );
+		$wp_customize->add_control( 'email_icon_bawx', array(
+			'type' => 'text',
+			'section' => 'footer_section',
+			'settings' => 'email_icon_bawx',
+			'label' => __( 'Add Font Awesome Icon Here.' ),
+			'description' => __( 'Go to fontawseome.com, pick a social media icon. Put it here.' ),
+		) );
+
 		////////////// Sidbar Right Theme
 
 		$wp_customize->add_section('sidebar-rt-section', array(
