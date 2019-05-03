@@ -4,6 +4,29 @@
   background-color: $dark-gray;
 }
 
+.footer-cred {
+  background-color: $dark-gray;
+  text-align: center;
+  width: 100%;
+  padding-bottom: 1.618em;
+  p {
+    margin-bottom: 0;
+    font-size: 14px;
+  }
+  .social-icons-footer {
+    font-size: 2rem;
+    i {
+      margin: 5px;
+    }
+  }
+  span.tfs-copyright {
+    margin-right: 1em;
+  }
+  span.tfs-footer-date {
+    margin-left: 1em;
+  }
+}
+
 .footer-grid {
   @include xy-grid;
   padding: rem-calc(30) 0;
