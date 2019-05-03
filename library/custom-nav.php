@@ -1369,7 +1369,8 @@ if (! function_exists('wpt_register_theme_customizer')) :
  		// Social Media #1
 		$wp_customize->add_setting( 'facebook_icon_bawx', array(
 			'capability' => 'edit_theme_options',
-			'default' => 'fab fa-facebook',
+			'type'	=> 'theme_mod',
+			'default' => '',
 			'sanitize_callback' => 'sanitize_text_field',
 		) );
 		$wp_customize->add_control( 'facebook_icon_bawx', array(
@@ -1382,7 +1383,8 @@ if (! function_exists('wpt_register_theme_customizer')) :
 		// Social Media #2
 		$wp_customize->add_setting( 'twitter_icon_bawx', array(
 			'capability' => 'edit_theme_options',
-			'default' => 'fab fa-twitter-square',
+			'type'	=> 'theme_mod',
+			'default' => '',
 			'sanitize_callback' => 'sanitize_text_field',
 		) );
 		$wp_customize->add_control( 'twitter_icon_bawx', array(
@@ -1395,7 +1397,8 @@ if (! function_exists('wpt_register_theme_customizer')) :
 		// Social Media #3
 		$wp_customize->add_setting( 'instagram_icon_bawx', array(
 			'capability' => 'edit_theme_options',
-			'default' => 'fab fa-instagram',
+			'type'	=> 'theme_mod',
+			'default' => '',
 			'sanitize_callback' => 'sanitize_text_field',
 		) );
 		$wp_customize->add_control( 'instagram_icon_bawx', array(
@@ -1408,7 +1411,8 @@ if (! function_exists('wpt_register_theme_customizer')) :
 		// Social Media #4
 		$wp_customize->add_setting( 'youtube_icon_bawx', array(
 			'capability' => 'edit_theme_options',
-			'default' => 'fab fa-youtube-square',
+			'type'	=> 'theme_mod',
+			'default' => '',
 			'sanitize_callback' => 'sanitize_text_field',
 		) );
 		$wp_customize->add_control( 'youtube_icon_bawx', array(
@@ -1421,7 +1425,8 @@ if (! function_exists('wpt_register_theme_customizer')) :
 		// Social Media #5
 		$wp_customize->add_setting( 'email_icon_bawx', array(
 			'capability' => 'edit_theme_options',
-			'default' => 'fas fa-envelope-square',
+			'type'	=> 'theme_mod',
+			'default' => '',
 			'sanitize_callback' => 'sanitize_text_field',
 		) );
 		$wp_customize->add_control( 'email_icon_bawx', array(
