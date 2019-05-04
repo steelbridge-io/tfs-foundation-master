@@ -487,10 +487,25 @@ if ( ! function_exists( 'foundationpress_scripts' ) ) :
 			wp_add_inline_style( $frontpage_title_link, $frontpage_title_link_color );
 		}
 
+		$socialmedia_title_link = 'main-stylesheet';
+		$socialmedia_title_link_color = '';
 
+		$socialmedia_icon_color = get_theme_mod('socialmedia_icon_color');
+		$socialmedia_iconhover_color = get_theme_mod('socialmedia_iconhover_color');
 
+		$socialmedia_title_link_color = '
 
+		 #footer-credentials.social-icons-footer a {
+			color:' . $socialmedia_icon_color . ';
+		}
+		#footer-credentials.social-icons-footer a:hover {
+			color:' . $socialmedia_iconhover_color . ';
+		}
+		';
 
+		if( $socialmedia_title_link_color ) {
+			wp_add_inline_style( $socialmedia_title_link, $socialmedia_title_link_color );
+		}
 	} 
   endif; 
 	add_action( 'wp_enqueue_scripts', 'foundationpress_scripts' );
