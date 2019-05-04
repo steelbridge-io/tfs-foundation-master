@@ -15,6 +15,8 @@ if (! function_exists('wpt_register_theme_customizer')) :
 	function wpt_register_theme_customizer($wp_customize)
 	{
 
+		include ('customizer-options/footer-options.php');
+
 		// Create custom panels
 		$wp_customize->add_panel(
 			'mobile_menu_settings', array(
@@ -389,7 +391,7 @@ if (! function_exists('wpt_register_theme_customizer')) :
 			)
 		);
 		// Front Page Top Widget Text Color Selective Refresh
-		$wp_customize->selective_refresh->add_partial('fp-top-widget-txt-color', array(
+		 $wp_customize->selective_refresh->add_partial('fp-top-widget-txt-color', array(
 				'selector' => '.topcta-text-color',
 				'settings' => 'fp-top-widget-txt-color',
 				'render_callback' => 'output'
@@ -1358,84 +1360,6 @@ if (! function_exists('wpt_register_theme_customizer')) :
 			)
 		);
 
-		//////////////// ADD FOOTER CUSTOMIZER
-		$wp_customize->add_section('footer_section', array(
-			'title' => __('Footer Section', 'foundationpress'),
-			'priority' => 80,
-			'active_callback' => function () {
-				return is_page_template('page-templates/front.php');
-			}
-		));
- 		// Social Media #1
-		$wp_customize->add_setting( 'facebook_icon_bawx', array(
-			'capability' => 'edit_theme_options',
-			'type'	=> 'theme_mod',
-			'default' => '',
-			'sanitize_callback' => 'sanitize_text_field',
-		) );
-		$wp_customize->add_control( 'facebook_icon_bawx', array(
-			'type' => 'text',
-			'section' => 'footer_section',
-			'settings' => 'facebook_icon_bawx',
-			'label' => __( 'Add Font Awesome Icon Here.' ),
-			'description' => __( 'Go to fontawseome.com, pick a social media icon. Put it here.' ),
-		) );
-		// Social Media #2
-		$wp_customize->add_setting( 'twitter_icon_bawx', array(
-			'capability' => 'edit_theme_options',
-			'type'	=> 'theme_mod',
-			'default' => '',
-			'sanitize_callback' => 'sanitize_text_field',
-		) );
-		$wp_customize->add_control( 'twitter_icon_bawx', array(
-			'type' => 'text',
-			'section' => 'footer_section',
-			'settings' => 'twitter_icon_bawx',
-			'label' => __( 'Add Font Awesome Icon Here.' ),
-			'description' => __( 'Go to fontawseome.com, pick a social media icon. Put it here.' ),
-		) );
-		// Social Media #3
-		$wp_customize->add_setting( 'instagram_icon_bawx', array(
-			'capability' => 'edit_theme_options',
-			'type'	=> 'theme_mod',
-			'default' => '',
-			'sanitize_callback' => 'sanitize_text_field',
-		) );
-		$wp_customize->add_control( 'instagram_icon_bawx', array(
-			'type' => 'text',
-			'section' => 'footer_section',
-			'settings' => 'instagram_icon_bawx',
-			'label' => __( 'Add Font Awesome Icon Here.' ),
-			'description' => __( 'Go to fontawseome.com, pick a social media icon. Put it here.' ),
-		) );
-		// Social Media #4
-		$wp_customize->add_setting( 'youtube_icon_bawx', array(
-			'capability' => 'edit_theme_options',
-			'type'	=> 'theme_mod',
-			'default' => '',
-			'sanitize_callback' => 'sanitize_text_field',
-		) );
-		$wp_customize->add_control( 'youtube_icon_bawx', array(
-			'type' => 'text',
-			'section' => 'footer_section',
-			'settings' => 'youtube_icon_bawx',
-			'label' => __( 'Add Font Awesome Icon Here.' ),
-			'description' => __( 'Go to fontawseome.com, pick a social media icon. Put it here.' ),
-		) );
-		// Social Media #5
-		$wp_customize->add_setting( 'email_icon_bawx', array(
-			'capability' => 'edit_theme_options',
-			'type'	=> 'theme_mod',
-			'default' => '',
-			'sanitize_callback' => 'sanitize_text_field',
-		) );
-		$wp_customize->add_control( 'email_icon_bawx', array(
-			'type' => 'text',
-			'section' => 'footer_section',
-			'settings' => 'email_icon_bawx',
-			'label' => __( 'Add Font Awesome Icon Here.' ),
-			'description' => __( 'Go to fontawseome.com, pick a social media icon. Put it here.' ),
-		) );
 
 		////////////// Sidbar Right Theme
 
@@ -1640,7 +1564,10 @@ function theme_slug_sanitize_html( $input ) {
 			'href' => array(),
 			'title' => array(),
 			'target' => array(),
-			'class' => array()
+			'class' => array(),
+			'www'	=> array(),
+			'http' => array(),
+			'https'	=> array(),
 		),
 		'br' => array(),
 		'span' => array(),
