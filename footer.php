@@ -34,8 +34,7 @@
 					'<a class="soc-2" href="'.$social_link_two.'" title="Social Media Link #2"><i class="'. $social_icon_two .'"></i></a>'.
 					'<a class="soc-3" href="'.$social_link_three.'" title="Social Media Link #3"><i class="'. $social_icon_three .'"></i></a>'.
 					'<a class="soc-4" href="'.$social_link_four.'" title="Social Media Link #4"><i class="'. $social_icon_four .'"></i></a>'.
-					'<a href="'.$social_link_five.'" class="soc-5" title="Social Media Link #5"><i class="'.
-			$social_icon_five	.'"></i></a>'.
+					'<a href="'.$social_link_five.'" class="soc-5" title="Social Media Link #5"><i class="'. $social_icon_five	.'"></i></a>'.
 					'</div>'; ?>
 
 		<p><span class="tfs-copyright">&copy;&nbsp;THE FLY SHOP, INC.&nbsp;&reg;</span>&nbsp;|&nbsp;<span
