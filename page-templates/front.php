@@ -351,27 +351,6 @@ foreach($myposts as $post) : setup_postdata($post);
 </div>
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!-- END POSTS -->
 <?php do_action( 'foundationpress_after_content' ); ?>
 
@@ -386,16 +365,19 @@ foreach($myposts as $post) : setup_postdata($post);
 
 	</div>
 	<div id="parallax-divider" class="gid-x">
-		<div class="cell large-12 mt-2618 mb-2618 text-center parallax-text-divider">
-		<span class="fp-divider-content">
-		<?php
-		$parallax_divider = get_theme_mod('fp-divider-content');
-		echo $parallax_divider;
-		?>
-		</span>
+		<div class="cell large-12 mt-2618 mb-2618 parallax-text-divider">
+			<div class="row align-center text-center">
+				<div class="column large-8">
+				<span class="fp-divider-content">
+				<?php
+				$parallax_divider = get_theme_mod('fp-divider-content');
+				echo $parallax_divider;
+				?>
+				</span>
+				</div>
+			</div>
 		</div>
 	</div>
-
 
 	<?php $parallax_2 = get_theme_mod('fp-bottomparallax-img'); ?>
 	<div id="parallaxtwo" class="parallax-window" data-parallax="scroll" data-speed="0.5" data-image-src="<?php echo $parallax_2; ?>">
