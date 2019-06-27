@@ -7,6 +7,6 @@
  */
 
 ?>
-<aside class="sidebar">
+<aside id="default-sidebar" class="sidebar">
 	<?php dynamic_sidebar( 'sidebar-blog' ); ?>
 </aside>

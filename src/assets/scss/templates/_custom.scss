@@ -620,6 +620,21 @@ body {
 ------------------------------------ **/
 /* Side Bar Right */
 
+
+#default-sidebar.sidebar {
+
+ .widget img {
+   margin: 0 auto;
+   display: block;
+  }
+
+  .widget.widget_media_image {
+    margin-bottom: 1.618em;
+    margin-top: 1.618em;
+  }
+
+}
+
 #sidebar-right-template.main-container {
   padding-left: 0;
   padding-right: 0;

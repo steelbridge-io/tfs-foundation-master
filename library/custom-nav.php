@@ -75,7 +75,8 @@ if (! function_exists('wpt_register_theme_customizer')) :
 		$wp_customize->add_setting( 'adds_slider_caption', array(
 			'capability' => 'edit_theme_options',
 			'type'       => 'theme_mod',
-			'sanitize_callback' => 'themeslug_sanitize_checkbox',
+			'transport'	 => 'refresh',
+			//'sanitize_callback' => 'themeslug_sanitize_checkbox',
 		) );
 
 		$wp_customize->add_control( 'adds_slider_caption', array(

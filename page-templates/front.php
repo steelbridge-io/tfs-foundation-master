@@ -24,7 +24,12 @@ get_header(); ?>
 						$get_image_one_id = attachment_url_to_postid($get_image_one);
 						$alt_slider_one = get_post_meta ( $get_image_one_id, '_wp_attachment_image_alt', true ); ?>
 						<img class="orbit-image orbit-image-one" src="<?php echo $get_image_one; ?>" alt="<?php echo $alt_slider_one; ?>">
-						<figcaption class="orbit-caption orbit-caption-one"><?php echo get_theme_mod('fp-topslider-one-caption'); ?></figcaption>
+						<?php
+						if(get_theme_mod('adds_slider_caption') == '1') {
+						echo '<figcaption class="orbit-caption orbit-caption-one">' . get_theme_mod('fp-topslider-one-caption') .
+							'</figcaption>';
+						 } ?>
+
 					</figure>
 				</li>
 				<li class="orbit-slide">
@@ -35,7 +40,11 @@ get_header(); ?>
 						$get_image_two_id = attachment_url_to_postid($get_image_two);
 						$alt_slider_two = get_post_meta ( $get_image_two_id, '_wp_attachment_image_alt', true ); ?>
 						<img class="orbit-image orbit-image-two" src="<?php echo get_theme_mod('fp-topslider-two'); ?>" alt="<?php echo $alt_slider_two; ?>">
-						<figcaption class="orbit-caption orbit-caption-two"><?php echo get_theme_mod('fp-topslider-two-caption'); ?></figcaption>
+						<?php
+						if(get_theme_mod('adds_slider_caption') == '1') {
+						echo '<figcaption class="orbit-caption orbit-caption-two">'. get_theme_mod('fp-topslider-two-caption') .'</figcaption>';
+						} ?>
+
 					</figure>
 				</li>
 				<li class="orbit-slide">
@@ -46,7 +55,11 @@ get_header(); ?>
 						$get_image_three_id = attachment_url_to_postid($get_image_three);
 						$alt_slider_three = get_post_meta ( $get_image_three_id, '_wp_attachment_image_alt', true ); ?>
 						<img class="orbit-image orbit-image-three" src="<?php echo get_theme_mod('fp-topslider-three'); ?>" alt="<?php echo $alt_slider_three; ?>">
-						<figcaption class="orbit-caption orbit-caption-three"><?php echo get_theme_mod('fp-topslider-three-caption'); ?></figcaption>
+						<?php
+						if(get_theme_mod('adds_slider_caption') == '1') {
+						echo '<figcaption class="orbit-caption orbit-caption-three">'. get_theme_mod('fp-topslider-three-caption') .'</figcaption>';
+						} ?>
+
 					</figure>
 				</li>
 				<li class="orbit-slide">
@@ -57,7 +70,11 @@ get_header(); ?>
 						$get_image_four_id = attachment_url_to_postid($get_image_four);
 						$alt_slider_four = get_post_meta ( $get_image_four_id, '_wp_attachment_image_alt', true ); ?>
 						<img class="orbit-image orbit-image-four" src="<?php echo get_theme_mod('fp-topslider-four'); ?>" alt="<?php echo $alt_slider_four; ?>">
-						<figcaption class="orbit-caption orbit-caption-four"><?php echo get_theme_mod('fp-topslider-four-caption'); ?></figcaption>
+						<?php
+						if(get_theme_mod('adds_slider_caption') == '1') {
+						echo '<figcaption class="orbit-caption orbit-caption-four">'. get_theme_mod('fp-topslider-four-caption') .'</figcaption>';
+						} ?>
+
 					</figure>
 				</li>
 

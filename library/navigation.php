@@ -41,13 +41,14 @@ if ( ! function_exists( 'foundationpress_top_bar_r' ) ) {
 	function foundationpress_top_bar_r() {
 		wp_nav_menu(
 			array(
-				'container'      => false,
-        'menu_class'     => 'align-center sticky-shrinknav-menu dropdown menu',
-				'items_wrap'     => '<ul id="%1$s" class="%2$s desktop-menu" data-disable-hover="true" data-dropdown-menu>%3$s</ul>',
-				'theme_location' => 'top-bar-r',
-				'depth'          => 3,
-				'fallback_cb'    => false,
-				'walker'         => new Foundationpress_Top_Bar_Walker(),
+				'container'      	=> 'div',
+        'container_class'	=> 'primary-nav menu-primary-container',
+        'menu_class'     	=> 'sticky-shrinknav-menu dropdown menu',
+				'items_wrap'     	=> '<ul id="%1$s" class="%2$s desktop-menu" data-disable-hover="true" data-dropdown-menu>%3$s</ul>',
+				'theme_location' 	=> 'top-bar-r',
+				'depth'          	=> 3,
+				'fallback_cb'    	=> false,
+				'walker'         	=> new Foundationpress_Top_Bar_Walker(),
 			)
 		);
 	}

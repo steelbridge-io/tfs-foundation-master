@@ -1,4 +1,9 @@
 $(function() {
+
+  $(document).ready(function() {
+    $(".primary-nav > ul").addClass('align-center');
+  });
+
   $(window).scroll(function() {
     var winTop = $(window).scrollTop();
     
@@ -7,6 +12,8 @@ $(function() {
       if (winTop >= 30) {
 
         $("body").addClass("sticky-shrinknav-wrapper");
+        $(".primary-nav > ul").removeClass('align-center');
+        $(".primary-nav > ul").addClass('align-right');
 
       //} else {
 
