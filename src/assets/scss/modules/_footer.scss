@@ -30,12 +30,13 @@
 .footer-grid {
   @include xy-grid;
   padding: rem-calc(30) 0;
-  
+  background: transparent;
+
   h6 {
     font-size: rem-calc(22);
     color: $font-white;
   }
-  
+
   p {
     color: $font-white;
   }
@@ -51,5 +52,14 @@
     list-style-type: none;
     margin: 0;
     padding: 0;
+  }
+
+  .row.below {
+    justify-content: center;
+    .columns .callout {
+      margin-top: 1rem;
+      background-color: transparent;
+      border: none;
+    }
   }
 }

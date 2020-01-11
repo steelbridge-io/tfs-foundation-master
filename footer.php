@@ -10,11 +10,19 @@
 ?>
 
 <footer id="footer" class="footer">
-	<div class="footer-container container-flex">
-		<div class="footer-grid">
-			<?php dynamic_sidebar( 'footer-widgets' ); ?>
-		</div>
+
+	<div class="footer-grid">
+
+		<?php dynamic_sidebar( 'footer-widgets' ); ?>
+
 	</div>
+
+	<div class="footer-grid">
+
+		<?php dynamic_sidebar( 'footer-widgets-below' ); ?>
+
+	</div>
+
 	<div id="footer-sel-refresh" class="footer-cred" style="width:100%;">
 		<div class="footer-social"></div>
 		<?php
